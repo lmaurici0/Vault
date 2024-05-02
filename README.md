@@ -47,4 +47,4 @@ Por fim, para executa-lo você pode colar isto no terminal
 
 ## Licença
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/lmaurici0/python-pdv/blob/main/LICENSE)
