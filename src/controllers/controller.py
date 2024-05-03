@@ -11,13 +11,21 @@ class HelloController(MethodView):
 
 
 class IndexController(MethodView):
-    def get(self):
+    def get(self,code=None):
         with mysql.cursor() as cur:
             cur.execute("SELECT * FROM produto")
             data = cur.fetchall()
+            
             cur.execute("SELECT * FROM category")
             categories = cur.fetchall()
-        return render_template('public/index.html', data=data, categories=categories)
+            
+            
+            if code is not None:
+                cur.execute("SELECT * FROM produto WHERE code = %s", (code,))
+                product = cur.fetchone()
+            else:
+                product = None
+        return render_template('public/index.html', data=data, product=product, categories=categories)
     
     def post(self):
         code = request.form['code']
@@ -53,10 +61,10 @@ class UpdateProdutoController(MethodView):
         value = request.form['value']
         
         with mysql.cursor() as cur:
-            cur.execute("UPDATE produto SET code =%s, name =%s, stock =%s, value =%s WHERE code = %s", (productCode, name, stock, value, code))
+            cur.execute("UPDATE produto SET code = %s, name = %s, stock = %s, value = %s WHERE code = %s", (productCode, name, stock, value, code))
             cur.connection.commit()
         return redirect('/')
-
+    
 class CategoriesController(MethodView):
     def post(self):
         category_id = request.form['id']
