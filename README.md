@@ -2,7 +2,7 @@
 # Vault - PDV
 
 
-Este projeto foi feito visando melhorar o armazenamento de produtos online para processos como dropshipping e diversos. Você poderá usa-lo sempre que quiser.
+Este projeto foi feito visando melhorar o armazenamento de produtos online para processos como dropshipping e diversos. Os dados estão armazenados em um servidor apache local, você pode criar o seu próprio usando o XAMPP.
 
 
 ## Tecnlogias utilizadas
@@ -34,6 +34,17 @@ Instale as dependências
   pip install pymsql, flask
 ```
 
+## Variáveis de Ambiente
+
+Para rodar esse projeto, você vai precisar criar variaveis de ambiente .env, se não tiver uma ainda você pode criar com 
+
+```bash
+python -m venv venv
+cd venv 
+scripts/activate
+```
+
+
 ## Instalação
 
 Por fim, para executa-lo você pode colar isto no terminal
@@ -47,4 +58,4 @@ Por fim, para executa-lo você pode colar isto no terminal
 
 ## Licença
 
-[MIT](https://github.com/lmaurici0/python-pdv/blob/main/LICENSE)
+[MIT](https://choosealicense.com/licenses/mit/)
