@@ -72,17 +72,52 @@ input[type="number"]::-webkit-inner-spin-button{
 }
 
 .btns{
-    display: flex;
-    padding: 30px;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    columns: 2;
+    column-count: 2;
+}
+
+.btns input{
+    width: 100%;
+    height: 30px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 2px;
+    border: 1px solid #333;
+    font-family: Poppins, sans-serif;
 }
 
 .func-button{
-    width: 25%;
+    width: 100%;
     height: 5%;
-    margin-right: 30px;
     font-family: Poppins;
+    margin-bottom: 20px;
+}
+
+.prodTitle{
+    margin-top: 50px;
+    font-size: 2rem;
+    font-family: Montserrat;
+    color: #000;
+}
+
+table { 
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;    
+    font-size: 1.1rem;
+    font-family: Poppins;
+    color: #000;
+    border: 1px solid #333;
+    margin-bottom: 30px;
+}
+
+td, th{
+    border: 1px solid #666;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 /* Update HTML */
@@ -115,4 +150,48 @@ input[type="number"]::-webkit-inner-spin-button{
 .form h1{
     font-family: Poppins;
     margin: 30px;
+}
+
+/* Login.html */
+.content {
+    justify-content: center;
+    align-items: center;
+    margin: 10% auto;
+    display: flex;
+}
+
+.loginForm {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: grid;
+    font-family: Poppins;
+    background-color: rgb(68, 130, 134);
+    width: 40%;
+    padding: 50px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.loginForm input{
+    font-family: Poppins;
+    padding: 6px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #333;
+    width: 100%;
+    height: auto;
+}
+
+.loginForm button{
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    border:1px solid #333;
+    font-size: 1rem;
+    font-family: Poppins;
+    width: 100%;
+    height: auto;
+    background-color: #1f1d1d;          
 }
