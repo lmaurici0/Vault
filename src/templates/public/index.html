@@ -1,8 +1,5 @@
 {% extends "base.html" %}
 
-{% block title %} Cadastro de produtos {% endblock %}
-
-
 {% block content %}
 <main>
     <div class="card">
@@ -40,25 +37,50 @@
                     <select name="category" id="categoryInput" class="form-control" required>
                         <option>Select a category</option>
                         {% for category in categories %}
-                            <option value="{{category.0}}">{{ category.1}}</option>
+                        <option value="{{category.0}}">{{ category.1}}</option>
                         {% endfor %}
                     </select>
                     <br>
                 </div>
 
-                <button class="btn btn-success cadaster text-center">Cadastar</button>
+                <button class="btn btn-success cadaster text-center">Cadastrar</button>
             </form>
-
-
         </div>
 
         <div class="btns">
-        <button class="btn btn-success func-button text-center" ><a href="/update/product/{{product.0}}" style="text-decoration: none; color: #fff;"> Verificar produtos</button></a> 
-        <button class="btn btn-primary  update      func-button text-center">Atualizar produtos</button>
-        <button class="btn btn-danger   remove      func-button text-center">Remover produtos</button>
-    </div>
-
+            <input type="text" name="update" id="updateProd" placeholder="Digite o id do produto:"><br>
+            <button class="btn btn-primary  update      func-button text-center" onclick="changePageUpdate()">Atualizar produto</button><br>
+        
+            <input type="text" name="delete" id="deleteProd" placeholder="Digite o id do produto:"><br>
+            <button class="btn btn-danger   remove      func-button text-center">Remover produto</button><br>
+        </div>
+        <hr>
+        
+        <h1 class="prodTitle text-center">Produtos</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Estoque</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in data %}
+            <tr>
+                <td>{{ product.0 }}</td>
+                <td>{{ product.1 }}</td>
+                <td>{{ product.3 }}</td>
+                <td>{{ product.4 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        
     </div>
 
 </main>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
 {% endblock %}
