@@ -9,10 +9,6 @@ class HelloController(MethodView):
     def post(self):
         pass
 
-class LoginController(MethodView):
-    def post():
-        return render_template('public/login.html')
-
 class IndexController(MethodView):
     def get(self):
         with mysql.cursor() as cur:
