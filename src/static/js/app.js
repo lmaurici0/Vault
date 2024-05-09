@@ -1,15 +1,19 @@
-const btnVerify = document.getElementById('verifyProd')
-const btnUpdate = document.getElementById('updateProd')
-const btnDelete = document.getElementById('deleteProd')
+const btnVerify = document.getElementById('verifyProd');
+const btnUpdate = document.getElementById('updateProd');
+const btnDelete = document.getElementById('deleteProd');
 
-function changePageUpdate() {
+const changePage = (url) => {
+    window.location.href = url;
+};
+
+btnUpdate.addEventListener('click', () => {
     const id = btnUpdate.value;
-    const url = '/update/product/' + id; 
-    window.location.href = url;  
-}
+    const url = '/update/product/' + id;
+    changePage(url);
+});
 
-function changeDeletePage(){
+btnDelete.addEventListener('click', () => {
     const id = btnDelete.value;
     const url = '/delete/product/' + id;
-    window.location.href = url;
-}
+    changePage(url);
+});
