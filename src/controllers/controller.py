@@ -2,13 +2,6 @@ from flask.views import MethodView
 from flask import request, render_template, redirect, flash, Flask
 from src.db import mysql
 
-class HelloController(MethodView):
-    def get(self):
-        return "Hello world"
-
-    def post(self):
-        pass
-
 class IndexController(MethodView):
     def get(self):
         with mysql.cursor() as cur:
